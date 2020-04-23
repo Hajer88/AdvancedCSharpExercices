@@ -10,6 +10,25 @@ namespace AdvancedCSharp
     {
         static void Main(string[] args)
         {
+            //Créer une liste générique de type Personne
+            List<Personne> p = new List<Personne>()
+            {
+                new Personne() {Id = 1, age = 20, Name="aaa" },
+                new Personne() {Id = 2, age = 16, Name="aaa" },
+                new Personne() {Id = 3, age = 14, Name="bbbb" },
+
+            };
+            //Retourner les persoones ayant age <15 & >20
+            //Deffered Query
+            //DotNotation Syntax
+            var PersonList = p.Where(a => a.age > 15 && a.age < 20).ToList();
+            //Récupérer la 1ere personne ayant comme nom "aaa"
+            var Person = p.Where(a => a.Name == "aaa").FirstOrDefault();
+            //Récupérer la personne ayant comme id = 2
+            var Personne = p.SingleOrDefault(c=> c.Id == 2);
+
+            
+           
             
             int[] numbers = { 1, 4, 6, 8, 10, 12 };
             //Utiliser LINQ query pour récupérer les entiers supérieur à 6???
