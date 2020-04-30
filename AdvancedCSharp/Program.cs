@@ -10,6 +10,12 @@ namespace AdvancedCSharp
     {
         static void Main(string[] args)
         {
+
+            //Créer delegate qui va pointer sur DelegateEx2Atelier5.Addition()
+            BinaryOp bop = new BinaryOp(DelegateEx2Atelier5.Addition);
+
+            //Invoquer Addition()
+            Console.WriteLine(bop(10,20));
             //Créer une liste générique de type Personne
             List<Personne> p = new List<Personne>()
             {
@@ -27,9 +33,6 @@ namespace AdvancedCSharp
             //Récupérer la personne ayant comme id = 2
             var Personne = p.SingleOrDefault(c=> c.Id == 2);
 
-            
-           
-            
             int[] numbers = { 1, 4, 6, 8, 10, 12 };
             //Utiliser LINQ query pour récupérer les entiers supérieur à 6???
             //Query Syntax
